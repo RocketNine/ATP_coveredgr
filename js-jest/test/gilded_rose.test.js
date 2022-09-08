@@ -153,7 +153,7 @@ describe("Gilded Rose", function () {
 
     it("Shop can contain multiple items and each is updated", () => {
         const sut = new Shop([new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-            new Item("generic item", 10, 5)]);
+        new Item("generic item", 10, 5)]);
 
         const items = sut.updateQuality();
 
