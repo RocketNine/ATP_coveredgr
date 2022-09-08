@@ -51,7 +51,21 @@ Install dependencies
 npm install
 ```
 
-## Running app
+## Running Jest unit tests
+
+To run all tests
+
+```sh
+npm run test:jest
+```
+
+To run all tests in watch mode
+
+```sh
+npm run test:jest:watch
+```
+
+## Running appTextTest tests
 _You may need to install `ts-node`_
 
 ```sh
@@ -63,18 +77,4 @@ Or with number of days as args:
 npx ts-node test/golden-master-text-test.ts 10
 ```
 
-## Running tests
-
-To run all tests
-
-### Jest way
-
-```sh
-npm run test:jest
-```
-
-To run all tests in watch mode
-
-```sh
-npm run test:jest:watch
-```
+More info on TextTest at https://texttest.org/
