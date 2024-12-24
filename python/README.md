@@ -41,10 +41,16 @@ Just for clarification, an item can never have its Quality increase above 50, ho
 legendary item and as such its Quality is 80 and it never alters.
 
 ---
+### Approval Tests
+```sh
+ pip install approvaltests
+ ```
+
+---
 
 ### Running Tests
 
-To run the tests
+To run the tests (will run unit tests and approval tests)
 
 ```sh
 pytest
@@ -55,4 +61,3 @@ OR
 ```sh
 python3 -m unittest test_gilded_rose.py
 ```
-

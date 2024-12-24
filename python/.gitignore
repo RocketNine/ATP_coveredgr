@@ -3,6 +3,7 @@ __pycache__/
 
 bin/
 build/
+.approval_tests_temp/
 
 pip-log.txt
 
