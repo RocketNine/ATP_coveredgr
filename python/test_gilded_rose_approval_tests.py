@@ -38,7 +38,8 @@ class TestApprovals(unittest.TestCase):
                 ]
             ])
 
-    #
+    # This test will generate all combinations of name/sell_in/quality and compare the results
+    # to the contents in TestApprovals.test_multiple_items_via_combinations.approved.txt
     def test_multiple_items_via_combinations(self):
         item_names     = ["normal item", "Aged Brie", "Backstage passes to a TAFKAL80ETC concert" ]
         sell_in_values = [ -1, 0, 5, 10, 11 ]
