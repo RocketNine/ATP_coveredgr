@@ -3,10 +3,15 @@ import unittest
 from gilded_rose import Item, GildedRose
 from approvaltests import verify, verify_all_combinations, verify_all_combinations_with_namer
 
-
 class TestApprovals(unittest.TestCase):
+
+    # Similar to a pytest unit test but uses the Approval Tests verify instead of assert
+    # the results of this test are captured in a file named TestApprovals.test_single_item.received.txt
+    # and compared to the expected results in TestApprovals.test_single_item.approved.txt
+    # The test passes when the contents of the received file match the approved file.
+    # When the test passes, the received file is deleted.
     def test_single_item(self):
-        items = [Item("normal item", 10, 5)]
+        items = [Item("normal item", 10, 6)]
         sut = GildedRose(items)
 
         # Act
@@ -16,6 +21,8 @@ class TestApprovals(unittest.TestCase):
         # Assert
         verify(actual_updated_item)
 
+    # Generates combinations of sell_in and fixed quality for a legendary item.
+    # Compares the received out to TestApprovals.test_legendary_items_sell_in_and_quality_unchanged.approved.txt
     def test_legendary_items_sell_in_and_quality_unchanged(self):
         def update_legendary_item(item):
             sut = GildedRose([item])
@@ -31,20 +38,11 @@ class TestApprovals(unittest.TestCase):
                 ]
             ])
 
-
-# 2024-12-24 Continue
-# code is stashed locally but not pushed to remote
-# TODO:
-# looks like I'm on track to figuring this out
-# add other item names, sell and quality
-# Look to Java approvals for what values I used there
-# See Win11 downloads folder for AI exmaple that seems close
-
+    #
     def test_multiple_items_via_combinations(self):
-        item_names     = ["normal item", "Aged Brie"]
-        sell_in_values = [ 0, 10, 20 ]
-        quality_values = [ 0, 5, 10 ]
-        # for sell_in_values in range(-5, 10)   - can I make this work?
+        item_names     = ["normal item", "Aged Brie", "Backstage passes to a TAFKAL80ETC concert" ]
+        sell_in_values = [ -1, 0, 5, 10, 11 ]
+        quality_values = [ 0, 1, 49, 50 ]
 
         def update_single_item(name, sell_in, quality):
             items = [Item(name, sell_in, quality)]

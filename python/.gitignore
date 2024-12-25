@@ -7,3 +7,5 @@ build/
 
 pip-log.txt
 
+# Approval Test received files typically indicate a test failure and shouldn't be committed
+*.received.txt
