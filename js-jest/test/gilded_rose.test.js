@@ -162,4 +162,6 @@ describe("Gilded Rose", function () {
         expect(items[1].sellIn).toBe(9);
     });
 
+    //TODO: NEW BEHAVIOR
+    // conjured items
 });
